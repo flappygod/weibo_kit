@@ -50,8 +50,8 @@ class Weibo {
       StreamController<WeiboSdkResp>.broadcast();
 
   Future<void> registerApp({
-    @required String appKey,
-    @required List<String> scope,
+    required String appKey,
+    required List<String> scope,
     String redirectUrl =
         _DEFAULT_REDIRECTURL, // 新浪微博开放平台 -> 我的应用 -> 应用信息 -> 高级信息 -> OAuth2.0授权设置
   }) {
@@ -90,14 +90,14 @@ class Weibo {
     return _shareMsgRespStreamController.stream;
   }
 
-  Future<bool> isInstalled() {
+  Future<bool?> isInstalled() {
     return _channel.invokeMethod<bool>(_METHOD_ISINSTALLED);
   }
 
   /// 登录
   Future<void> auth({
-    @required String appKey,
-    @required List<String> scope,
+    required String appKey,
+    required List<String> scope,
     String redirectUrl = _DEFAULT_REDIRECTURL,
   }) {
     assert(appKey != null && appKey.isNotEmpty);
@@ -114,9 +114,9 @@ class Weibo {
 
   /// 用户信息
   Future<WeiboUserInfoResp> getUserInfo({
-    @required String appkey,
-    @required String userId,
-    @required String accessToken,
+    required String appkey,
+    required String userId,
+    required String accessToken,
   }) {
     assert(userId != null && userId.isNotEmpty);
     assert(accessToken != null && accessToken.isNotEmpty);
@@ -159,7 +159,7 @@ class Weibo {
 
   /// 分享 - 文本
   Future<void> shareText({
-    @required String text,
+    required String text,
   }) {
     assert(text != null && text.length <= 1024);
     return _channel.invokeMethod<void>(
@@ -172,9 +172,9 @@ class Weibo {
 
   /// 分享 - 图片
   Future<void> shareImage({
-    String text,
-    Uint8List imageData,
-    Uri imageUri,
+    String? text,
+    Uint8List? imageData,
+    Uri? imageUri,
   }) {
     assert(text == null || text.length <= 1024);
     assert((imageData != null && imageData.lengthInBytes <= 2 * 1024 * 1024) ||
@@ -194,10 +194,10 @@ class Weibo {
 
   /// 分享 - 网页
   Future<void> shareWebpage({
-    @required String title,
-    @required String description,
-    @required Uint8List thumbData,
-    @required String webpageUrl,
+    required String title,
+    required String description,
+    required Uint8List thumbData,
+    required String webpageUrl,
   }) {
     assert(title != null && title.isNotEmpty && title.length <= 512);
     assert(description != null &&

@@ -4,7 +4,6 @@ import 'dart:typed_data';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:image/image.dart' as image;
 import 'package:okhttp_kit/okhttp_kit.dart';
 import 'package:path/path.dart' as path;
 import 'package:path_provider/path_provider.dart' as path_provider;
@@ -193,19 +192,7 @@ class _HomeState extends State<Home> {
                     flush: true,
                   );
                 }
-                image.Image thumbnail =
-                    image.decodePng(saveFile.readAsBytesSync());
-                Uint8List thumbData = thumbnail.getBytes();
-                if (thumbData.length > 32 * 1024) {
-                  thumbData = Uint8List.fromList(image.encodeJpg(thumbnail,
-                      quality: 100 * 32 * 1024 ~/ thumbData.length));
-                }
-                await _weibo.shareWebpage(
-                  title: 'title',
-                  description: 'share webpage',
-                  thumbData: thumbData.buffer.asUint8List(),
-                  webpageUrl: 'https://www.baidu.com',
-                );
+
               }
             },
           ),

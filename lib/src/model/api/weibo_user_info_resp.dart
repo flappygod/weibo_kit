@@ -10,9 +10,9 @@ part 'weibo_user_info_resp.g.dart';
 )
 class WeiboUserInfoResp extends WeiboApiResp {
   WeiboUserInfoResp({
-    int errorCode,
-    String error,
-    String request,
+    int? errorCode,
+    String? error,
+    String? request,
     this.id,
     this.idstr,
     this.screenName,
@@ -29,34 +29,34 @@ class WeiboUserInfoResp extends WeiboApiResp {
       _$WeiboUserInfoRespFromJson(json);
 
   /// 用户UID（int64）
-  final int id;
+  final int? id;
 
   /// 字符串型的用户 UID
-  final String idstr;
+  final String? idstr;
 
   /// 用户昵称
-  final String screenName;
+  final String? screenName;
 
   /// 友好显示名称
-  final String name;
+  final String? name;
 
   /// 用户所在地
-  final String location;
+  final String? location;
 
   /// 用户个人描述
-  final String description;
+  final String? description;
 
   /// 用户头像地址，50×50像素
-  final String profileImageUrl;
+  final String? profileImageUrl;
 
   /// 性别，m：男、f：女、n：未知
-  final String gender;
+  final String? gender;
 
   /// 用户大头像地址
-  final String avatarLarge;
+  final String? avatarLarge;
 
   /// 用户高清大头像地址
-  final String avatarHd;
+  final String? avatarHd;
 
   bool isMale() {
     return gender == 'm';

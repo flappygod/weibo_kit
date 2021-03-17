@@ -8,7 +8,7 @@ part 'weibo_sdk_resp.g.dart';
 )
 class WeiboSdkResp {
   WeiboSdkResp({
-    int errorCode,
+    int? errorCode,
     this.errorMessage,
   }) : errorCode = errorCode ?? SUCCESS;
 
@@ -43,7 +43,7 @@ class WeiboSdkResp {
   static const int UNKNOWN = -100;
 
   final int errorCode;
-  final String errorMessage;
+  final String? errorMessage;
 
   Map<dynamic, dynamic> toJson() => _$WeiboSdkRespToJson(this);
 }

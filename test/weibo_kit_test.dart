@@ -24,7 +24,7 @@ void main() {
             channel.name,
             channel.codec.encodeMethodCall(
                 MethodCall('onAuthResp', json.decode('{"errorCode":-1}'))),
-            (ByteData data) {
+            (ByteData? data) {
               // mock success
             },
           ));
@@ -36,7 +36,7 @@ void main() {
             channel.name,
             channel.codec.encodeMethodCall(
                 MethodCall('onShareMsgResp', json.decode('{"errorCode":-1}'))),
-            (ByteData data) {
+            (ByteData? data) {
               // mock success
             },
           ));

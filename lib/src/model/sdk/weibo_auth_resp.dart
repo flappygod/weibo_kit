@@ -9,8 +9,8 @@ part 'weibo_auth_resp.g.dart';
 )
 class WeiboAuthResp extends WeiboSdkResp {
   WeiboAuthResp({
-    int errorCode,
-    String errorMessage,
+    int? errorCode,
+    String? errorMessage,
     this.userId,
     this.accessToken,
     this.refreshToken,
@@ -20,10 +20,10 @@ class WeiboAuthResp extends WeiboSdkResp {
   factory WeiboAuthResp.fromJson(Map<dynamic, dynamic> json) =>
       _$WeiboAuthRespFromJson(json);
 
-  final String userId;
-  final String accessToken;
-  final String refreshToken;
-  final int expiresIn;
+  final String? userId;
+  final String? accessToken;
+  final String? refreshToken;
+  final int? expiresIn;
 
   @override
   Map<dynamic, dynamic> toJson() => _$WeiboAuthRespToJson(this);

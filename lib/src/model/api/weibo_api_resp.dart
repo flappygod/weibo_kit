@@ -1,6 +1,6 @@
 abstract class WeiboApiResp {
   WeiboApiResp({
-    int errorCode,
+    int? errorCode,
     this.error,
     this.request,
   }) : errorCode = errorCode ?? ERROR_CODE_SUCCESS;
@@ -9,6 +9,6 @@ abstract class WeiboApiResp {
 
   /// https://open.weibo.com/wiki/Help/error
   final int errorCode;
-  final String error;
-  final String request;
+  final String? error;
+  final String? request;
 }
