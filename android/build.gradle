@@ -19,7 +19,7 @@ rootProject.allprojects {
 
         // weibo
         maven {
-            url 'https://dl.bintray.com/thelasterstar/maven/'
+            url 'https://repos.spark-packages.org/thelasterstar/maven/'
         }
     }
 }
