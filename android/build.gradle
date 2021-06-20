@@ -70,5 +70,5 @@ dependencies {
     //设置
     implementation 'androidx.annotation:annotation:1.0.0'
     // 支付宝
-    implementation files('libs/openDefault-10.10.0.aar')
+    provided files('libs/openDefault-10.10.0.aar')
 }
