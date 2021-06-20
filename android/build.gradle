@@ -41,12 +41,23 @@ android {
         disable 'InvalidPackage'
     }
 
+    repositories {
+        flatDir {
+            dirs { 'libs' }
+        }
+    }
+
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+
     flavorDimensions 'vendor'
 
     productFlavors {
         vendor {
             dimension 'vendor'
-
             // library 混淆 -> 随 library 引用，自动添加到 apk 打包混淆
             consumerProguardFiles 'consumer-vendor-rules.pro'
         }
@@ -54,9 +65,10 @@ android {
 }
 
 dependencies {
+    //加入jar包
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    //设置
     implementation 'androidx.annotation:annotation:1.0.0'
-
-    // v9.12.0
-    vendorImplementation 'androidx.appcompat:appcompat:1.0.0'
-    vendorImplementation 'com.sina.weibo.sdk:core:9.12.0:openDefaultRelease@aar'
+    // 支付宝
+    implementation files('libs/openDefault-10.10.0.aar')
 }
