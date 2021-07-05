@@ -18,9 +18,7 @@ rootProject.allprojects {
         jcenter()
 
         // weibo
-        maven {
-            url 'https://repos.spark-packages.org/thelasterstar/maven/'
-        }
+        maven { url 'https://repo1.maven.org/maven2/' }
     }
 }
 
