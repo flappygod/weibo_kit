@@ -8,12 +8,12 @@ part of 'weibo_auth_resp.dart';
 
 WeiboAuthResp _$WeiboAuthRespFromJson(Map json) {
   return WeiboAuthResp(
-    errorCode: json['errorCode'] as int,
-    errorMessage: json['errorMessage'] as String,
-    userId: json['userId'] as String,
-    accessToken: json['accessToken'] as String,
-    refreshToken: json['refreshToken'] as String,
-    expiresIn: json['expiresIn'] as int,
+    errorCode: json['errorCode'] as int?,
+    errorMessage: json['errorMessage'] as String?,
+    userId: json['userId'] as String?,
+    accessToken: json['accessToken'] as String?,
+    refreshToken: json['refreshToken'] as String?,
+    expiresIn: json['expiresIn'] as int?,
   );
 }
 

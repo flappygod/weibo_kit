@@ -8,8 +8,8 @@ part of 'weibo_sdk_resp.dart';
 
 WeiboSdkResp _$WeiboSdkRespFromJson(Map json) {
   return WeiboSdkResp(
-    errorCode: json['errorCode'] as int,
-    errorMessage: json['errorMessage'] as String,
+    errorCode: json['errorCode'] as int?,
+    errorMessage: json['errorMessage'] as String?,
   );
 }
 
