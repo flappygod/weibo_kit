@@ -5,6 +5,13 @@ buildscript {
     repositories {
         google()
         jcenter()
+        maven {
+            credentials {
+                username 'IwFSpm'
+                password 'X1eGwcKUn6'
+            }
+            url 'https://repo.rdc.aliyun.com/repository/83882-release-vRoR7q/'
+        }
     }
 
     dependencies {
@@ -19,6 +26,13 @@ rootProject.allprojects {
 
         // weibo
         maven { url 'https://repo1.maven.org/maven2/' }
+        maven {
+            credentials {
+                username 'IwFSpm'
+                password 'X1eGwcKUn6'
+            }
+            url 'https://repo.rdc.aliyun.com/repository/83882-release-vRoR7q/'
+        }
     }
 }
 
@@ -39,11 +53,6 @@ android {
         disable 'InvalidPackage'
     }
 
-    repositories {
-        flatDir {
-            dirs { 'libs' }
-        }
-    }
 
     sourceSets {
         main {
@@ -67,6 +76,6 @@ dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     //设置
     implementation 'androidx.annotation:annotation:1.0.0'
-    // 支付宝
-    compileOnly files('libs/openDefault-10.10.0.aar')
+    //支付宝
+    api 'com.flappygo:weibo:1.0.0@aar'
 }
